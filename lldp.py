@@ -7,6 +7,7 @@ ssh.expect('We.*password')
 ssh.sendline('Sommer123!')
 ssh.expect('.*Press any key to continue.*')
 ssh.sendline('')
+ssh.expect('#')
 ssh.sendline('show lldp info local-device')
-
-print ssh.before
+ssh.expect('Control-C')
+print ssh.before # an dieser Stelle nach der Chassis Id matchen
